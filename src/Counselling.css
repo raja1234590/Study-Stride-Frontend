@@ -1,0 +1,123 @@
+/* Main Container */
+.counselling-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Card Base Style */
+.plan-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+/* Premium Card Highlight */
+.premium {
+  border-top: 6px solid #6a4df5;
+}
+
+.basic {
+  border-top: 6px solid #00b894;
+}
+
+/* Title + Price Section */
+.plan-header {
+  margin-bottom: 20px;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+}
+
+.plan-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 6px;
+  color: #6a4df5;
+}
+
+/* Features List */
+.plan-features {
+  text-align: left;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.plan-features li {
+  font-size: 15px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.tick {
+  color: #00b894;
+  margin-right: 10px;
+}
+
+.cross {
+  color: #d63031;
+  margin-right: 10px;
+}
+
+/* Payment Section */
+.payment-info {
+  background: #f8f9ff;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.payment-info p {
+  margin: 6px 0;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #0984e3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 26px;
+  }
+
+  .plan-card {
+    padding: 20px;
+  }
+}

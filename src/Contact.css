@@ -1,0 +1,93 @@
+.contact-page {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.contact-header p {
+  color: #666;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-bottom: 3rem;
+}
+
+.faq-section h2 {
+  font-size: 1.5rem;
+  color: #1e88e5;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  border-left: 4px solid #1e88e5;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(5px);
+  background: #f1f9ff;
+}
+
+.faq-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+/* Contact Info */
+.contact-info {
+  background: #eef6ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  color: #1e88e5;
+  margin-right: 8px;
+}
