@@ -36,10 +36,17 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* ✅ Home */}
-        <Route path="/" element={<About />} />
+        {/* 🔐 Home (ONLY after login) */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <About />
+            </ProtectedRoute>
+          }
+        />
 
-        {/* ✅ Auth routes (blocked if logged in) */}
+        {/* 🚫 Auth routes (blocked if logged in) */}
         <Route
           path="/signup"
           element={
@@ -57,11 +64,11 @@ function App() {
           }
         />
 
-        {/* Public */}
+        {/* 🌐 Public */}
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
 
-        {/* Protected */}
+        {/* 🔒 Protected */}
         <Route
           path="/counselling"
           element={
@@ -111,7 +118,7 @@ function App() {
           }
         />
 
-        {/* ✅ Fallback */}
+        {/* 🔁 Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
@@ -121,4 +128,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
