@@ -32,7 +32,7 @@ function Counselling() {
 
     try {
       await axios.post(
-        "https://study-stride-backend.vercel.app/api/counselling",
+        "http://localhost:5000/api/counselling",
         data
       );
       alert("Counselling request submitted successfully!");

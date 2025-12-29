@@ -12,7 +12,7 @@ function ForgotPassword() {
 
     try {
       await axios.post(
-        "https://study-stride-backend.vercel.app/api/auth/forgot-password",
+        "http://localhost:5000/api/auth/forgot-password",
         { email }
       );
 
