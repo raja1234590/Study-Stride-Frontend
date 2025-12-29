@@ -25,7 +25,7 @@ function ResetPassword() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/reset-password",
+        "https://study-stride-backend.vercel.app/api/auth/reset-password",
         {
           email,
           otp,
