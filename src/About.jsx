@@ -33,12 +33,9 @@ function About() {
       <section className="hero">
         <div className="hero-container">
           <div className="hero-content">
-            <h1>About Our EAMCET Platform</h1>
+            <h1>About Our Platform</h1>
             <p>
-              Welcome to <strong>StudyStride Solutions</strong>! We built this
-              platform exclusively for <b>EAMCET aspirants</b> who are preparing
-              for one of the most important entrance exams in Andhra Pradesh and
-              Telangana.
+              StudyStride Solutions offers high-quality study resources, personalized guidance, counselling support, and smart learning tools to help students make informed decisions about their education. Whether you are preparing for engineering, medical, or other competitive exams, or planning your next academic step, we are here to guide you at every stage of your journey.
             </p>
           </div>
           <div className="hero-image">
@@ -52,7 +49,7 @@ function About() {
         <div className="mission-container">
           <h2>Our Mission</h2>
           <p>
-            Our mission is simple – to make your <b>EAMCET preparation
+            Our mission is simple – to make your <b>EXAM preparation
             smoother</b> by providing all the essential resources in one place,
             so you can focus only on your studies.
           </p>
@@ -81,7 +78,7 @@ function About() {
           <h2>Why Choose Us?</h2>
           <p className="choose-desc">
             We are not just another exam website – we’re students ourselves who
-            know the challenges of EAMCET prep. That’s why we created a platform
+            know the challenges of Competitive exam prep. That’s why we created a platform
             that’s practical, affordable, and student-friendly.
           </p>
         </div>
@@ -92,7 +89,7 @@ function About() {
         <div className="motto-container">
           <h2>Our Motto</h2>
           <p>
-            No student should feel lost while preparing for EAMCET. With the
+            No student should feel lost while preparing for Competitive exam. With the
             right guidance and resources, success is possible for everyone.
           </p>
         </div>

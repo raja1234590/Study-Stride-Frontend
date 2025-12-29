@@ -99,19 +99,26 @@
 }
 
 .signup-btn {
-  background: var(--gradient-primary);
-  color: hsl(var(--primary-foreground)) !important;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.3s ease;
+  
+  color: black;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+
+  box-shadow: none;
+  border: none;
+
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .signup-btn:hover {
-  box-shadow: var(--shadow-primary);
-  transform: translateY(-2px);
+ 
+  transform: translateY(-1px);
 }
+
 
 .logout-btn {
   background: hsl(var(--destructive));

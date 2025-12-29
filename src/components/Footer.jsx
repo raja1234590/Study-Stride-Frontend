@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
           <h3>About Us</h3>
           <p>
-            We provide EAMCET resources, previous year papers, preparation books,
+            We provide Exam preparation resources, previous year papers, preparation books,
             and career guidance to help students succeed in their exams.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="bottom-bar">
-        © {new Date().getFullYear()} EAMCET Guide. All Rights Reserved.
+        © {new Date().getFullYear()} Study Stride Solutions. All Rights Reserved.
       </div>
     </footer>
   );

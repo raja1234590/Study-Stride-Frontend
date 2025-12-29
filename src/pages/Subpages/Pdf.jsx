@@ -38,6 +38,7 @@ function Pdf() {
         {pdfs.map((note, index) => (
           <div key={index} className="pdf-card">
             <img src="/images/slider2.jpg" alt={note.title} className="pdf-img" />
+            <p>{note.title}</p>
             <a href={note.link} target="_blank" rel="noopener noreferrer" className="download-btn">
               View / Download
             </a>

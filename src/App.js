@@ -20,7 +20,7 @@ import Signup from "./pages/Authpages/Signup";
 
 import ForgotPassword from "./pages/Authpages/ForgotPassword";
 import ResetPassword from "./pages/Authpages/ResetPassword";
-
+import VerifyOtp from "./pages/Authpages/OTP";
 // Subpages
 import Books from "./pages/Subpages/Books";
 import Pdf from "./pages/Subpages/Pdf";
@@ -66,7 +66,9 @@ function App() {
 
         {/* 🌐 Public */}
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
+
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* 🔒 Protected */}
         <Route

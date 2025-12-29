@@ -7,7 +7,6 @@ function Navbar() {
   const [showResources, setShowResources] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // ✅ Central auth check
   const checkAuth = () => {
     const token = localStorage.getItem("token");
     if (token && token !== "undefined" && token !== "null") {
@@ -25,7 +24,7 @@ function Navbar() {
       checkAuth();
     };
 
-    // 🔁 Sync in same tab (focus change)
+    
     window.addEventListener("storage", handleStorageChange);
     window.addEventListener("focus", checkAuth);
 

@@ -84,24 +84,28 @@
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.1rem;
-  color: #555;
+  color:black;
+  background:pink;
+  
 }
 
 /* Motto */
 .motto-section {
-  background: #eef6ff;
+  background: white;
   padding: 60px 20px;
   text-align: center;
 }
 .motto-section h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  
 }
 
 /* CTA */
 .contact-cta {
   padding: 60px 20px;
   text-align: center;
+  
 }
 .cta-buttons {
   margin-top: 20px;

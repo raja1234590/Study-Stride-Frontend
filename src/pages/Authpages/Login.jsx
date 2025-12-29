@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Login.css";
 
@@ -17,44 +17,59 @@ function Login() {
         { email, password }
       );
 
-      
       localStorage.setItem("token", res.data.token);
-
-      
       window.dispatchEvent(new Event("storage"));
 
       toast.success("Login successful!");
-
-     
       navigate("/");
     } catch (err) {
-      toast.error(err.response?.data?.message || "Error while logging in");
+      toast.error(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h2>Login</h2>
+    <div className="auth-wrapper">
+      {/* background blobs */}
+      <div className="blob blue"></div>
+      <div className="blob orange"></div>
 
-        <input
-          type="email"
-          placeholder="Enter Gmail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+      <div className="auth-card">
+        <h2 className="auth-title">Login</h2>
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <form onSubmit={handleLogin}>
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <button type="submit">Login</button>
-      </form>
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <div className="forgot">
+            <Link to="/forgot-password">Forgot password?</Link>
+          </div>
+
+          <button type="submit" className="auth-btn">
+            Login
+          </button>
+        </form>
+
+        {/* ✅ Signup link added */}
+        <p className="signup-text">
+          Don’t have an account?{" "}
+          <Link to="/signup">Signup here</Link>
+        </p>
+      </div>
     </div>
   );
 }

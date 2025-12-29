@@ -1,123 +1,119 @@
-/* Main Container */
+/* Page wrapper */
 .counselling-container {
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* Page Title */
-.page-title {
-  font-size: 34px;
-  font-weight: 700;
-  color: #222;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-/* Grid Layout */
-.plans-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
-}
-
-/* Card Base Style */
-.plan-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
-}
-
-.plan-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-}
-
-/* Premium Card Highlight */
-.premium {
-  border-top: 6px solid #6a4df5;
-}
-
-.basic {
-  border-top: 6px solid #00b894;
-}
-
-/* Title + Price Section */
-.plan-header {
-  margin-bottom: 20px;
-}
-
-.plan-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #222;
-}
-
-.plan-price {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 6px;
-  color: #6a4df5;
-}
-
-/* Features List */
-.plan-features {
-  text-align: left;
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 25px;
-}
-
-.plan-features li {
-  font-size: 15px;
-  margin: 10px 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  color: #333;
+  padding: 60px 16px;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.tick {
-  color: #00b894;
-  margin-right: 10px;
+/* Title */
+.page-title {
+  color: #ffffff;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.cross {
-  color: #d63031;
-  margin-right: 10px;
+/* Subtitle */
+.subtitle {
+  color: #cbd5f5;
+  font-size: 1rem;
+  margin-bottom: 35px;
+  text-align: center;
 }
 
-/* Payment Section */
-.payment-info {
-  background: #f8f9ff;
-  padding: 15px;
-  border-radius: 12px;
-  font-size: 14px;
-  color: #444;
+/* Form card */
+.counselling-form {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.payment-info p {
-  margin: 6px 0;
+/* Inputs & selects */
+.counselling-form input,
+.counselling-form select,
+.counselling-form textarea {
+  width: 90%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  outline: none;
+  transition: all 0.25s ease;
 }
 
-.icon {
-  margin-right: 8px;
-  color: #0984e3;
+/* Focus effect */
+.counselling-form input:focus,
+.counselling-form select:focus,
+.counselling-form textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
-/* Responsive */
+/* Textarea */
+.counselling-form textarea {
+  resize: none;
+}
+
+/* File upload label */
+.counselling-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-top: 6px;
+}
+
+/* File input */
+.counselling-form input[type="file"] {
+  padding: 6px;
+  background: #ffffff;
+  border: none;
+}
+
+/* Submit button */
+.counselling-form button {
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.counselling-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Button active */
+.counselling-form button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
 @media (max-width: 480px) {
   .page-title {
-    font-size: 26px;
+    font-size: 1.8rem;
   }
 
-  .plan-card {
-    padding: 20px;
+  .counselling-form {
+    padding: 24px 20px;
   }
 }

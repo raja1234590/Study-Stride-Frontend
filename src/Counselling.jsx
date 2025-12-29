@@ -1,60 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Counselling.css";
-import { FaCheck, FaTimes, FaWhatsapp, FaMoneyBillWave } from "react-icons/fa";
 
 function Counselling() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    degree: "",
+    email: "",
+    phone: "",
+    exam: "",
+    day: "",
+    time: "",
+    comments: "",
+  });
+
+  const [resume, setResume] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+    if (resume) data.append("resume", resume);
+
+    try {
+      await axios.post(
+        "https://study-stride-backend.vercel.app/api/counselling",
+        data
+      );
+      alert("Counselling request submitted successfully!");
+    } catch (err) {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <div className="counselling-container">
-      <h1 className="page-title">Complete EAMCET Guidance</h1>
+      <h1 className="page-title">Counselling Request Form</h1>
       <p className="subtitle">
-        Choose the right plan for your preparation journey and get expert support.
+        Education-based platform for competitive exams
       </p>
 
-      <div className="plans-grid">
-        {/* Premium Plan */}
-        <div className="plan-card premium">
-          <div className="plan-header">
-            <h2 className="plan-title">Premium Plan</h2>
-            <p className="plan-price">₹1000 / 2 Months</p>
-          </div>
+      <form className="counselling-form" onSubmit={handleSubmit}>
+        <input name="firstName" placeholder="First Name" onChange={handleChange} required />
+        <input name="lastName" placeholder="Last Name" onChange={handleChange} required />
+        <input name="degree" placeholder="Degree (e.g. B.Tech, Intermediate)" onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Gmail" onChange={handleChange} required />
+        <input type="tel" name="phone" placeholder="Phone Number" onChange={handleChange} required />
 
-          <ul className="plan-features">
-            <li><FaCheck className="tick" /> 1:1 Phone Call Guidance</li>
-            <li><FaCheck className="tick" /> Weekly Sessions</li>
-            <li><FaCheck className="tick" /> Access to PYQs</li>
-            <li><FaCheck className="tick" /> Seat Allotment Guidance</li>
-            <li><FaCheck className="tick" /> Tips to Crack EAMCET (50+)</li>
-          </ul>
+        <select name="exam" onChange={handleChange} required>
+          <option value="">Select Competitive Exam</option>
+          <option value="JEE">JEE</option>
+          <option value="EAMCET">EAMCET</option>
+          <option value="COMEDK">COMEDK</option>
+          <option value="MHTCET">MHTCET</option>
+          <option value="BIPC / Medical">BIPC / Medical</option>
+          <option value="Other">Other(B.Tech)</option>
+        </select>
 
-          <div className="payment-info">
-            <p><FaWhatsapp className="icon" /> WhatsApp: <b>6309718310</b></p>
-            <p><FaMoneyBillWave className="icon" /> Pay via <b>PhonePe / GPay</b></p>
-            <p>📸 Send screenshot to <b>6309718310</b></p>
-          </div>
-        </div>
+        <select name="day" onChange={handleChange} required>
+          <option value="">Select Day</option>
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+        </select>
 
-        {/* Basic Plan */}
-        <div className="plan-card basic">
-          <div className="plan-header">
-            <h2 className="plan-title">Basic Plan</h2>
-            <p className="plan-price">₹500 / 1 Month</p>
-          </div>
+        <select name="time" onChange={handleChange} required>
+          <option value="">Select Time</option>
+          <option>5:30 PM</option>
+          <option>6:00 PM</option>
+          <option>6:30 PM</option>
+          <option>7:00 PM</option>
+          <option>7:30 PM</option>
+          <option>8:00 PM</option>
+          <option>8:30 PM</option>
+        </select>
 
-          <ul className="plan-features">
-            <li><FaTimes className="cross" /> 1:1 Phone Call Guidance</li>
-            <li><FaTimes className="cross" /> Weekly Sessions</li>
-            <li><FaCheck className="tick" /> Access to PYQs</li>
-            <li><FaCheck className="tick" /> Seat Allotment Guidance</li>
-            <li><FaCheck className="tick" /> Tips to Crack EAMCET (50+)</li>
-          </ul>
+        <textarea
+          name="comments"
+          placeholder="Additional Comments"
+          rows="4"
+          onChange={handleChange}
+        />
 
-          <div className="payment-info">
-            <p><FaWhatsapp className="icon" /> WhatsApp: <b>6309718310</b></p>
-            <p><FaMoneyBillWave className="icon" /> Pay via <b>PhonePe / GPay</b></p>
-            <p>📸 Send screenshot to <b>6309718310</b></p>
-          </div>
-        </div>
-      </div>
+        <label>Upload Resume (Optional)</label>
+        <input type="file" onChange={(e) => setResume(e.target.files[0])} />
+
+        <button type="submit">Submit Request</button>
+      </form>
     </div>
   );
 }
